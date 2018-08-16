@@ -1,0 +1,147 @@
+#hi {
+	position: relative;
+	animation-name: hi;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+
+}
+@-webkit-keyframes hi {
+	0% {
+		left: -800px;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+@-moz-keyframes hi {
+	0% {
+		left: -800px;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+@-o-keyframes hi {
+	0% {
+		left: -800px;
+	}
+
+				100% {
+					left: 0;
+	}
+}
+			
+@keyframes hi {
+	0% {
+		left: -800px;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+#name {
+	animation-name: im-dominic;
+	opacity: 0;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+	animation-duration: 3s;
+}
+
+@-webkit-keyframes im-dominic {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes im-dominic {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes im-dominic {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes im-dominic {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+#greetingText {
+	max-width: 30%; 
+	opacity: 0;
+	margin: 0 auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	animation-name: greetingText;
+	opacity: 0;
+	animation-delay: 3s;
+	animation-fill-mode: forwards;
+	animation-duration: 4s;
+}
+
+@-webkit-keyframes greetingText {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes greetingText {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes greetingText {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes greetingText {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
