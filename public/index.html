@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  		<meta charset="UTF-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  		<!-- font awesome -->
+		<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous"> -->
+  		<!--Import Google Icon Font-->
+  		<link rel="stylesheet" href="css/google-icons.css">
+  		<!-- Compiled and minified CSS -->
+  		<link rel="stylesheet" href="css/materialize.min.css">
+		  <title>Uzoanya Dominic</title>
+		  <style>
+			  header {
+				  background: url(img/boy.jpg);
+				  background-size: cover;
+				  background-position: center;
+				  min-height: 1000px;
+			  }
+
+			  #headerDiv {
+				  margin-top: 350px;
+			  }
+
+			  .btn-floating i:hover {
+				  color: #ffa500;
+			  }
+
+			  .btn-floating i:active {
+				  color: red;
+			  }
+
+			  .side-links:hover {
+				color: #ffa500 !important;
+			  }
+
+			  .side-links:active {
+				color: red;
+			  }
+
+			  #greetingText {
+				max-width: 30%; 
+				margin: 0 auto;
+				background-color: rgba(0, 0, 0, 0.4);
+			  }
+
+			  .section {
+				  padding-top: 4vw !important;
+				  padding-bottom: 4vw;
+			  }
+
+			  .tabs .indicator {
+				  background-color: #1a237e;
+			  }
+
+			  .tabs .tab a:focus, .tabs .tab a:focus.active {
+				  background: transparent;
+			  }
+
+			  	@media screen and (max-width: 670px) {
+					header {
+						min-height: 500px;
+					}
+
+				  	#greetingText {
+						max-width: 50%; 
+			  		}
+
+					#headerDiv {
+				  		margin-top: 100px;
+			 		}
+
+			  	}
+		  </style>
+	</head>
+	<body>
+
+  		<!-- navbar -->
+  		<header>
+			<nav class="nav-wrapper transparent">
+				<div class="container">
+					<a href="" class="brand-logo">Dominic</a>
+					<a href="#" class="sidenav-trigger" data-target="mobile-menu">
+						<i class="material-icons">menu</i>
+					</a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#services">Services</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="https://www.instagram.com/sirbarman/?hl=en" class="tooltipped btn-floating btn-small transparent blue-text darken-4" data-tooltip="Instagram">
+							<i class="fab fa-instagram"></i>
+						</a></li>
+						<li><a href="https://web.facebook.com/uzoanya.dominic" class="tooltipped btn-floating btn-small transparent blue-text darken-4" data-tooltip="Facebook">
+							<i class="fab fa-facebook"></i>
+						</a></li>
+						<li><a href="https://twitter.com/uzoanya_dominic" class="tooltipped btn-floating btn-small transparent blue-text darken-4" data-tooltip="Twitter">
+							<i class="fab fa-twitter"></i>
+						</a></li>
+					</ul>
+					<ul class="sidenav grey lighten-2" id="mobile-menu">
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#services">Services</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="https://www.instagram.com/sirbarman/?hl=en" target="_blank" class="tooltipped transparent blue-text darken-4" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a></li>
+						<li><a href="https://web.facebook.com/uzoanya.dominic" target="_blank" class="tooltipped transparent blue-text darken-4" data-tooltip="Facebook"><i class="fab fa-facebook"></i></a></li>
+						<li><a href="https://twitter.com/uzoanya_dominic" target="_blank" class="tooltipped transparent blue-text darken-4" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="white-text center-align" id="headerDiv">
+				<h3>Hi, I'm <span class="yellow-text">Dominic</span></h3>
+				<h5 id="greetingText">Web Developer & Programmer</h5>
+			</div>
+		  </header>
+		  
+	  	<!-- photo / grid -->
+	  	<secton id="skills" class="container section scrollspy">
+			<div class="row">
+				<div class="col s12 l4 offset-l1">
+					<img src="img/java.png" alt="A potrait" class="responsive-img materialboxed">
+				</div>
+				<div class="col s12 l6 offset-l1">
+					<h2 class="blue-text text-darken-4">Java</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, facilis.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s12 l4 push-l6 offset-l1">
+					<img src="img/javscript.jpg" alt="City" class="responsive-img materialboxed">
+				</div>
+				<div class="col s12 l6 pull-l5 right">
+					<h2 class="blue-text text-darken-4">JavaScript</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, facilis.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s12 l4 offset-l1">
+					<img src="img/sql.jpg" alt="Nature" class="responsive-img materialboxed">
+				</div>
+				<div class="col s12 l6 offset-l1">
+					<h2 class="blue-text text-darken-4">SQL</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, facilis.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s12 l4 offset-l1 push-l6">
+					<img src="img/portrait.jpg" alt="A potrait" class="responsive-img materialboxed">
+				</div>
+				<div class="col s12 l6 offset-l1 pull-l5">
+					<h2 class="blue-text text-darken-4">NoSQL</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, facilis.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s12 l4 offset-l1">
+					<img src="img/nodejs.png" alt="A potrait" class="responsive-img materialboxed">
+				</div>
+				<div class="col s12 l6 offset-l1">
+					<h2 class="blue-text text-darken-4">NodeJS</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, facilis.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s12 l4 push-l6 offset-l1">
+					<img src="img/webDevelopment.jpg" alt="City" class="responsive-img materialboxed">
+				</div>
+				<div class="col s12 l6 pull-l5 right">
+					<h2 class="blue-text text-darken-4">Web Development</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, facilis.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s12 l4 offset-l1">
+					<img src="img/shopify.jpg" alt="A potrait" class="responsive-img materialboxed">
+				</div>
+				<div class="col s12 l6 offset-l1">
+					<h2 class="blue-text text-darken-4">Shopify</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, facilis.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s12 l4 push-l6 offset-l1">
+					<img src="img/wordpress.png" alt="City" class="responsive-img materialboxed">
+				</div>
+				<div class="col s12 l6 pull-l5 right">
+					<h2 class="blue-text text-darken-4">Wordpress</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, facilis.</p>
+				</div>
+			</div>
+	  	</secton>
+
+	  <!-- parallax -->
+	  <div class="parallax-container white-text">
+		  <div class="parallax"><img src="img/code.jpg" alt="Laptop showing code"></div>
+		  <span>Photo by</span><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@_imkiran?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Sai Kiran Anagani"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Sai Kiran Anagani</span></a>
+	  </div>
+
+	  <!-- services / tabs -->
+	  <section class="container section scrollspy" id="services">
+		  <div class="row">
+			  	<div class="col s12 l4">
+				  	<h2 class="blue-text text-darken-4">What I do</h2>
+				  	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fuga neque quis sequi, provident hic aspernatur et repudiandae aperiam laboriosam.</p>
+				  	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fuga neque quis sequi, provident hic aspernatur et repudiandae aperiam laboriosam.</p>
+				</div>
+			
+				<div class="col s12 l6 offset-l2">
+					<ul class="tabs">
+						<li class="tab col s6">
+							<a href="#editing" class="blue-text text-darken-4">Web Development</a>
+						</li>
+						<li class="tab col s6">
+							<a href="#photography" class="blue-text text-darken-4">Desktop Apps</a>
+						</li>
+					</ul>
+					<div class="col s12" id="photography">
+						<p class="flow-text blue-text text-darken-4">Web Development</p>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fuga neque quis sequi, provident hic aspernatur et repudiandae aperiam laboriosam.</p>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fuga neque quis sequi, provident hic aspernatur et repudiandae aperiam laboriosam.</p>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fuga neque quis sequi, provident hic aspernatur et repudiandae aperiam laboriosam.</p>
+					</div>
+					<div class="col s12" id="editing">
+						<p class="flow-text blue-text text-darken-4">Desktop Applications</p>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fuga neque quis sequi, provident hic aspernatur et repudiandae aperiam laboriosam.</p>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fuga neque quis sequi, provident hic aspernatur et repudiandae aperiam laboriosam.</p>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fuga neque quis sequi, provident hic aspernatur et repudiandae aperiam laboriosam.</p>
+					</div>
+				</div>
+			</div>
+	  	</section>
+ 
+	  	<!-- parallax -->
+		<div class="parallax-container white-text">
+			<div class="parallax"><img src="img/marvin_meyer.jpg" alt="A macbook" class="responsive-img"></div>
+			<span></span>Photo by<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@marvelous?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Marvin Meyer"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Marvin Meyer</span></a>
+		</div>	
+		
+
+	  	<!-- contact form -->
+	  	<section class="container section scrollspy" id="contact">
+			<div class="row">
+				<div class="col s12 l5">
+					<h2 class="blue-text text-darken-4">Get In Touch</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus modi doloremque corporis facilis non culpa tempora, dolorum ad deleniti consequatur.</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus modi doloremque corporis facilis non culpa tempora, dolorum ad deleniti consequatur.</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus modi doloremque corporis facilis non culpa tempora, dolorum ad deleniti consequatur.</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus modi doloremque corporis facilis non culpa tempora, dolorum ad deleniti consequatur.</p>
+				</div>
+				<div class="col s12 l5 offset-l2">
+					<form>
+						<div class="input-field">
+							<i class="material-icons prefix">email</i>
+							<input type="email" id="email">
+							<label for="email">Your Email</label>
+						</div>
+						<div class="input-field">
+							<i class="material-icons prefix">message</i>
+							<textarea id="message" class="materialize-textarea"></textarea>
+							<label for="message">Your Message</label>
+						</div>
+						<div class="input-field">
+							<input type="text" id="date" class="datepicker">
+							<label for="date">Choose a date you need me for...</label>
+						</div>
+						<div class="input-field">
+							<p>Services required...</p>
+							<p>
+								<label>
+									<input type="checkbox">
+									<span>Web Development</span>
+								</label>
+							</p>
+							<p>
+								<label>
+									<input type="checkbox">
+									<span>Desktop Applications</span>
+								</label>
+							</p>
+							<p>
+								<label>
+									<input type="checkbox">
+									<span>I also teach</span>
+								</label>
+							</p>
+						</div>
+						<p>I'll be in touch.</p>
+						<div class="input-field center">
+							<button class="btn">Send Message</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+	  <!-- footer -->
+	  <footer class="page-footer grey darken-3">
+		  <div class="container">
+			  <div class="row">
+				  <div class="col s12 l6">
+					  <h5 id="about" class="scrollspy">About Me</h5>
+					  <p>I'm 4th from a family of 7. With a BSc. in Computer Science I'm a full time developer. When I'm not on my Computer screen I listen to music, watch movies or play video chess or games.</p>
+					  <p></p>
+				  </div>
+				  <div class="col s12 l4 offset-l2">
+					  <h5>Connect</h5>
+					  <ul>
+						  <li><a href="https://web.facebook.com/uzoanya.dominic" target="_blank" class="grey-text text-lighten-3">Facebook</a></li>
+						  <li><a href="https://twitter.com/uzoanya_dominic" target="_blank" class="grey-text text-lighten-3">Twitter</a></li>
+						  <li><a href="https://ng.linkedin.com/in/uzoanya-dominic-51b599137" target="_blank" class="grey-text text-lighten-3">linkedIn</a></li>
+						  <li><a href="https://www.instagram.com/sirbarman/?hl=en" target="_blank" class="grey-text text-lighten-3">Instagram</a></li>
+						  <li><a href="https://medium.com/@uzoanyadominic" target="_blank" class="grey-text text-lighten-3">Medium</a></li>
+					  </ul>
+				  </div>
+			  </div>
+		  </div>
+		  <div class="footer-copyright grey darken-4">
+			  <div class="container center-align">&copy; 2018 Uzoanya Dominic Chinomso - nomsouzoanya@yahoo.co.uk</div>
+		  </div>
+	  </footer>
+
+  <!-- Compiled and minified JavaScript -->
+  	<script src="js/jquery-3.1.1.min.js"></script>
+  	<script src="js/materialize.min.js"></script>
+  	<script>
+    	$(document).ready(function(){
+			$('.sidenav').sidenav();
+			$('.materialboxed').materialbox();
+			$('.parallax').parallax();
+			$('.tabs').tabs();
+			$('.datepicker').datepicker({
+				disableWeekends: true
+			});
+			$('.tooltipped').tooltip();
+			$('.scrollspy').scrollSpy();
+    	});
+  </script>
+</body>
+</html>
