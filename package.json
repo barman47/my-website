@@ -4,7 +4,8 @@
     "description": "Uzoanya Dominic's personal website",
   	"main": "server.js",
     "scripts": {
-    	"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node server.js"
     },
     "engines": {
       	"node": "^8.7.0",
