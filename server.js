@@ -50,11 +50,13 @@ app.post('/email', (req, res) => {
 
       transporter.sendMail(mailOptions, function(error, info){
         if (error) {
-          console.log(error);
+          //return console.log(error);
+          res.send(error);
+          return;
         } else {
           console.log('Email sent: ' + info.response);
-        //   res.sendFile('index.html');
-        res.end();
+        
+            res.status(200).end();
         }
       });
 });
