@@ -80,7 +80,7 @@
 	<body>
 
   		<!-- navbar -->
-  		<header>
+  		<header id="header" class="scrollspy">
 			<nav class="nav-wrapper transparent">
 				<div class="container">
 					<a href="" class="brand-logo">Dominic</a>
@@ -260,54 +260,54 @@
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus modi doloremque corporis facilis non culpa tempora, dolorum ad deleniti consequatur.</p>
 				</div>
 				<div class="col s12 l5 offset-l2">
-					<form>
+					<form name="form" method="POST" action="email">
 						<div class="input-field">
 							<i class="material-icons prefix">email</i>
-							<input type="email" id="email">
+							<input type="email" id="email" name="email">
 							<label for="email">Your Email</label>
 						</div>
 						<div class="input-field">
 							<i class="material-icons prefix">message</i>
-							<textarea id="message" class="materialize-textarea"></textarea>
+							<textarea id="message" class="materialize-textarea" name="message"></textarea>
 							<label for="message">Your Message</label>
 						</div>
 						<div class="input-field">
-							<input type="text" id="date" class="datepicker">
+							<input type="text" id="date" class="datepicker" name="date">
 							<label for="date">Choose a date you need me for...</label>
 						</div>
 						<div class="input-field">
 							<p>Services required...</p>
 							<p>
 								<label>
-									<input type="checkbox">
+									<input type="checkbox" id="web" name="web" value="Web Development">
 									<span>Web Development</span>
 								</label>
 							</p>
 							<p>
 								<label>
-									<input type="checkbox">
+									<input type="checkbox" id="desktopApp" name="desktopApp" value="Desktop Application">
 									<span>Desktop Applications</span>
 								</label>
 							</p>
 							<p>
 								<label>
-									<input type="checkbox">
+									<input type="checkbox" id="teach" name="teach" value="Teaching">
 									<span>I also teach</span>
 								</label>
 							</p>
 						</div>
 						<p>I'll be in touch.</p>
-						<div class="input-field">
-							<button class="btn disabled">Send Message</button>
-						</div>
 					</form>
+					<div class="input-field">
+						<button type="submit" class="btn">Send Message</button>
+					</div>
 				</div>
 			</div>
 		</section>
 
 	  <!-- footer -->
-	  <footer class="page-footer grey darken-3">
-		  <div class="container">
+	  	<footer class="page-footer grey darken-3">
+		  	<div class="container">
 			  <div class="row">
 					<hr>
 				  <div class="col s12 l6">
@@ -330,23 +330,13 @@
 		  <div class="footer-copyright grey darken-4">
 			  <div class="container center-align">&copy; 2018 Uzoanya Dominic Chinomso - nomsouzoanya@yahoo.co.uk</div>
 		  </div>
+		  <div class="fixed-action-btn">
+			  <a href="#header" id="top" class="btn-floating red darken-3"><i class="material-icons">arrow_upward</i></a>
+		  </div>
 	  </footer>
 
-  <!-- Compiled and minified JavaScript -->
   	<script src="js/jquery-3.1.1.min.js"></script>
-  	<script src="js/materialize.min.js"></script>
-  	<script>
-    	$(document).ready(function(){
-			$('.sidenav').sidenav();
-			$('.materialboxed').materialbox();
-			$('.parallax').parallax();
-			$('.tabs').tabs();
-			$('.datepicker').datepicker({
-				disableWeekends: true
-			});
-			$('.tooltipped').tooltip();
-			$('.scrollspy').scrollSpy();
-    	});
-  </script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/script.js"></script>
 </body>
 </html>
