@@ -76,6 +76,13 @@ app.get((req, res) => {
     res.status(404).send('Page Not Found');
 });
 
+app.get('*', function(req, res){
+    res.status(404).render('404', {
+        title: 'Error - Missing Page',
+        style: 'css/404.css'
+    });
+  });
+
 app.listen(PORT, () => {
     console.log(`Server is up on port ${PORT}...`);
 });

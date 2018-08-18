@@ -1,41 +1,45 @@
 $(document).ready(function(){
     var form = document.form;
+    var button = document.querySelector('button');
+    
     var inputs = [
         form.email,
         form.message,
         form.date
     ];
+    
     var checkBoxes = [
         form.web,
-        form.dekstopApp,
-        form.teach
+        form.desktopApp,
+        form.sayHi
     ];
 
-    var button = document.querySelector('button');
+    button.addEventListener('click', submitForm, false);
+    form.addEventListener('submit', submitForm, false);
 
-    button.addEventListener('click', function (event) {
+    function submitForm () {
         for (var i = 0; i < inputs.length; i++) {
             if (isEmpty(inputs[i])) {
-                event.preventDefault();
                 M.toast({
-                    html: 'Please provide message details',
-                    classes: 'rounded',
+                    html: 'Please provide message details to send.',
+                    classes: 'rounded'
                 });
                 inputs[i].focus();
                 break;
-            } else if (checkBoxes[i].checked !== true) {
-                event.preventDefault();
-                M.toast({
-                    html: 'Please select at least one service you require',
-                    classes: 'rounded'
-                });
-                break;
-            } else  {
-                event.preventDefault();
-                sendEmail();
-            }
+            }  
+        }
+
+        if (checkBoxes[0].checked === false && checkBoxes[1].checked === false && checkBoxes[2].checked === false) {
+            M.toast({
+                html: 'Please select at least one service you require.',
+                classes: 'rounded'
+            });
+    
+        } else {
+            sendEmail();
         } 
-    }, false);
+    }
+    
 
     $('.sidenav').sidenav();
     $('.materialboxed').materialbox();
@@ -78,13 +82,14 @@ $(document).ready(function(){
     }
 
     function sendEmail () {
+        $('button').html('SENDING MESSAGE...');
         let data = {
             email: $('#email').val(),
             message: $('#message').val(),
             date: $('#date').val(),
             webDevelopment: $('#web').val(),
             desktopApp: $('#desktopApp').val(),
-            teaching: $('#teach').val(),
+            sayHi: $('#sayHi').val(),
         };
         const url = '/email';
         setTimeout(function () {
@@ -99,9 +104,10 @@ $(document).ready(function(){
                 $('#email').val('');
                 $('#message').val('');
                 $('#date').val('');
-                $('#web').checked(false);
-                $('#desktopApp').checked('false');
-                $('#teach').checked('false');
+                $('#web').prop('checked', false);
+                $('#desktopApp').prop('checked', false);
+                $('#sayHi').prop('checked', false);
+                $('button').html('SEND MESSAGE');
             }).fail(function (jqXHR, status) {
                 M.toast({
                     html: 'Something went wrong. Message not sent. Please try again.',

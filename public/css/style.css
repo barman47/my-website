@@ -59,14 +59,16 @@ header {
 		margin-top: 100px;
 	}
 
-	#hi {
-		position: relative;
-		animation-name: hi;
-		animation-duration: 2s;
-		animation-fill-mode: forwards;
-    	animation-timing-function: ease-in-out;
-	}
 }
+
+#hi {
+	position: relative;
+	animation-name: hi;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+}
+
 @-webkit-keyframes hi {
 	0% {
 		left: -800px;
@@ -206,3 +208,8 @@ header {
 		opacity: 1;
 	}
 }
+
+
+.tabs .indicator{
+    background-color: #e65100 !important;
+    }
