@@ -42,13 +42,15 @@ app.post('/email', (req, res) => {
 
     var transporter = nodemailer.createTransport({
         service: 'gmail',
+        // host: 'smtp.gmail.com',
         auth: {
           user: 'uzoanyadominic@gmail.com',
-          pass: 'vicecity'
-        },
-        tls: {
-            rejectUnauthorized: false
+          pass: 'vicecity',
         }
+        // tls: {
+        //     rejectUnauthorized: false
+        //     // ciphers: 'SSLv3'
+        // }
       });
 
        // setup email data with unicode symbols
@@ -62,8 +64,8 @@ app.post('/email', (req, res) => {
 
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
-            //return console.log(error);
-            res.send(error);
+            return console.log(error);
+            //res.send(error);
             return;
         } else {
             console.log('Email sent: ' + info.response);

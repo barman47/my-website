@@ -113,6 +113,7 @@ $(document).ready(function(){
                     html: 'Something went wrong. Message not sent. Please try again.',
                     classes: 'rounded'
                 });
+                $('button').html('SEND MESSAGE');
             });
         }, 1000);
     }
