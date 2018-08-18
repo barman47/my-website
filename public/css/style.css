@@ -1,10 +1,71 @@
-#hi {
-	position: relative;
-	animation-name: hi;
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
+header {
+	background: url(/img/boy.jpg);
+	background-size: cover;
+	background-position: center;
+	min-height: 1000px;
+}
 
+#headerDiv {
+	margin-top: 350px;
+}
+
+.btn-floating i:hover {
+	color: #ffa500;
+}
+
+.btn-floating i:active {
+	color: red;
+}
+
+.side-links:hover {
+  	color: #ffa500 !important;
+}
+
+.side-links:active {
+  	color: red;
+}
+
+.section {
+	padding-top: 4vw !important;
+	padding-bottom: 4vw;
+}
+
+.tabs .indicator {
+	background-color: #1a237e;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+	background: transparent;
+}
+
+.footer-links:hover {
+	color: #ffa500 !important;
+}
+
+.footer-links:active {
+	color: #ff0000 !important;
+}
+
+@media screen and (max-width: 670px) {
+	header {
+  	min-height: 500px;
+	}
+
+	#greetingText {
+  		max-width: 50%; 
+	}
+
+	#headerDiv {
+		margin-top: 100px;
+	}
+
+	#hi {
+		position: relative;
+		animation-name: hi;
+		animation-duration: 2s;
+		animation-fill-mode: forwards;
+    	animation-timing-function: ease-in-out;
+	}
 }
 @-webkit-keyframes hi {
 	0% {

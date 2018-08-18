@@ -2,17 +2,29 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const exphbs = require('express-handlebars');
 const path = require('path');
 
 const PORT  = process.env.PORT || 3000;
+const publicPath = path.join(__dirname, 'public')
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(publicPath));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+app.engine('.hbs', exphbs({
+    defaultLayout: 'main',
+    extname: '.hbs'
+}));
+app.set('view engine', '.hbs');
+// app.set('views', path.join(publicPath, 'views'));
+
 app.get('/', (req, res) => {
-    res.sendFile('index.html');
+    res.render('home', {
+        title: 'Uzoanya Dominic',
+        style: 'css/style.css'
+    });
 });
 
 app.post('/email', (req, res) => {
@@ -48,17 +60,16 @@ app.post('/email', (req, res) => {
     };
       
 
-      transporter.sendMail(mailOptions, function(error, info){
+    transporter.sendMail(mailOptions, function(error, info){
         if (error) {
-          //return console.log(error);
-          res.send(error);
-          return;
+            //return console.log(error);
+            res.send(error);
+            return;
         } else {
-          console.log('Email sent: ' + info.response);
-        
+            console.log('Email sent: ' + info.response);
             res.status(200).end();
         }
-      });
+    });
 });
 
 app.get((req, res) => {
