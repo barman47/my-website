@@ -46,11 +46,11 @@ app.post('/email', (req, res) => {
         auth: {
           user: 'uzoanyadominic@gmail.com',
           pass: 'vicecity',
+        },
+        tls: {
+            rejectUnauthorized: false
+            // ciphers: 'SSLv3'
         }
-        // tls: {
-        //     rejectUnauthorized: false
-        //     // ciphers: 'SSLv3'
-        // }
       });
 
        // setup email data with unicode symbols
