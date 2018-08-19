@@ -110,7 +110,7 @@ $(document).ready(function(){
                 $('button').html('SEND MESSAGE');
             }).fail(function (jqXHR, status) {
                 M.toast({
-                    html: 'Something went wrong. Message not sent. Please try again.',
+                    html: 'Message not Sent. Please make sure you have an active connection.',
                     classes: 'rounded'
                 });
                 $('button').html('SEND MESSAGE');
