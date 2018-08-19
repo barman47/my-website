@@ -212,4 +212,20 @@ header {
 
 .tabs .indicator{
     background-color: #e65100 !important;
-    }
+}
+
+.whatIDo {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+#contactMessage {
+	font-size: 20px;
+	font-family: 'Nanum Gothic', sans-serif;
+	word-spacing: 2px;
+}
+
+.page-footer .footer-copyright {
+	padding: 50px 0px;
+}
+
+

@@ -123,7 +123,9 @@ $(document).ready(function(){
             html: 'You are currently offline'
         });
     });
+
     window.addEventListener('online', function(event){
+        document.querySelector('#offlineMessage').style.display = 'none';
         M.toast({
             html: 'You are back online'
         });
