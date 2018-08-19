@@ -59,6 +59,10 @@ header {
 		margin-top: 100px;
 	}
 
+	#footer .container .right {
+		text-align: center;
+	}
+ 
 }
 
 #hi {
