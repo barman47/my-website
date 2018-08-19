@@ -118,19 +118,16 @@ $(document).ready(function(){
         }, 1000);
     }
 
-    window.onload = checkInternetConnection;
-    function checkInternetConnection() {
-        var isOnLine = navigator.onLine;
-        if (isOnLine) {
-            M.toast({
-                html: 'You are currently offline'
-            });
-        } else {
-            M.toast({
-                html: 'You are back online'
-            });
-        }
-    }
+    window.addEventListener('offline', function(event){
+        M.toast({
+            html: 'You are currently offline'
+        });
+    });
+    window.addEventListener('online', function(event){
+        M.toast({
+            html: 'You are back online'
+        });
+    });
 });
 
 
