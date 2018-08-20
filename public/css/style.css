@@ -9,11 +9,11 @@ header {
 	margin-top: 350px;
 }
 
-.btn-floating i:hover {
+.footerLinks:hover {
 	color: #ffa500;
 }
 
-.btn-floating i:active {
+.footerLinks:active {
 	color: red;
 }
 

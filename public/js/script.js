@@ -91,6 +91,7 @@ $(document).ready(function(){
             desktopApp: $('#desktopApp').val(),
             sayHi: $('#sayHi').val(),
         };
+
         const url = '/email';
         setTimeout(function () {
             $.ajax(url, {
@@ -101,13 +102,14 @@ $(document).ready(function(){
                     html: 'Message Sent Successfully. Dominic will get back to you shortly.',
                     classes: 'rounded',
                 });
-                $('#email').val('');
-                $('#message').val('');
-                $('#date').val('');
-                $('#web').prop('checked', false);
-                $('#desktopApp').prop('checked', false);
-                $('#sayHi').prop('checked', false);
-                $('button').html('SEND MESSAGE');
+                form.reset();
+                // $('#email').val('');
+                // $('#message').val('');
+                // $('#date').val('');
+                // $('#web').prop('checked', false);
+                // $('#desktopApp').prop('checked', false);
+                // $('#sayHi').prop('checked', false);
+                // $('button').html('SEND MESSAGE');
             }).fail(function (jqXHR, status) {
                 M.toast({
                     html: 'Message not Sent. Please make sure you have an active connection.',
