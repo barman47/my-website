@@ -80,7 +80,7 @@ app.get((req, res) => {
 
 app.get('*', function(req, res){
     res.status(404).render('404', {
-        title: 'Error - Page not Found'
+        title: 'Error 404'
     });
   });
 
