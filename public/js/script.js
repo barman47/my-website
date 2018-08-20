@@ -125,7 +125,6 @@ $(document).ready(function(){
     });
 
     window.addEventListener('online', function(event){
-        document.querySelector('#offlineMessage').style.display = 'none';
         M.toast({
             html: 'You are back online'
         });
