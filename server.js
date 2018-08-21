@@ -18,7 +18,6 @@ app.engine('.hbs', exphbs({
     extname: '.hbs'
 }));
 app.set('view engine', '.hbs');
-// app.set('views', path.join(publicPath, 'views'));
 
 app.get('/', (req, res) => {
     res.render('home', {
@@ -42,14 +41,12 @@ app.post('/email', (req, res) => {
 
     var transporter = nodemailer.createTransport({
         service: 'gmail',
-        // host: 'smtp.gmail.com',
         auth: {
           user: 'uzoanyadominic@gmail.com',
           pass: 'vicecity',
         },
         tls: {
             rejectUnauthorized: false
-            // ciphers: 'SSLv3'
         }
       });
 
@@ -65,11 +62,8 @@ app.post('/email', (req, res) => {
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
             return console.log(error);
-            //res.send(error);
-            return;
         } else {
             console.log('Email sent: ' + info.response);
-            console.log(req.body);
             res.status(200).end();
         }
     });
@@ -84,12 +78,6 @@ app.get('*', function(req, res){
         title: 'Error 404'
     });
 });
-
-// app.get((req, res) => {
-//     res.status(404).render('404', {
-//         title: 'Error 404'
-//     });
-// });
 
 app.listen(PORT, () => {
     console.log(`Server is up on port ${PORT}...`);

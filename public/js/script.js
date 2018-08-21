@@ -1,4 +1,14 @@
 $(document).ready(function(){
+    $('.sidenav').sidenav();
+    $('.materialboxed').materialbox();
+    $('.parallax').parallax();
+    $('.tabs').tabs();
+    $('.datepicker').datepicker({
+        disableWeekends: true
+    });
+    $('.tooltipped').tooltip();
+    $('.scrollspy').scrollSpy();
+
     var form = document.form;
     var button = document.querySelector('button');
     
@@ -45,22 +55,10 @@ $(document).ready(function(){
                 } else {
                     sendEmail();
                     counter ++;
-                }
-                
+                }   
             }
-
         }
     }
-
-    $('.sidenav').sidenav();
-    $('.materialboxed').materialbox();
-    $('.parallax').parallax();
-    $('.tabs').tabs();
-    $('.datepicker').datepicker({
-        disableWeekends: true
-    });
-    $('.tooltipped').tooltip();
-    $('.scrollspy').scrollSpy();
 
     $('#top').on('click', function (event) {
         if (this.hash !== '') {
@@ -119,26 +117,24 @@ $(document).ready(function(){
         }
 
         const url = '/email';
-        setTimeout(function () {
-            $.ajax(url, {
-                type: 'POST',
-                data: data
-            }).done (function () {
-                M.toast({
-                    html: 'Message Sent Successfully. Dominic will get back to you shortly.',
-                    classes: 'rounded',
-                });
-                $('#submitButton').html('SEND MESSAGE');
-                form.reset();
-            }).fail(function (jqXHR, status) {
-                M.toast({
-                    html: 'Message not Sent. Please make sure you have an active internet connection.',
-                    classes: 'rounded'
-                });
-                $('#submitButton').html('SEND MESSAGE');
+        
+        $.ajax(url, {
+            type: 'POST',
+            data: data
+        }).done (function () {
+            M.toast({
+                html: 'Message Sent Successfully. Dominic will get back to you shortly.',
+                classes: 'rounded',
             });
-            
-        }, 1000);
+            $('#submitButton').html('SEND MESSAGE');
+            form.reset();
+        }).fail(function (jqXHR, status) {
+            M.toast({
+                html: 'Message not Sent. Please make sure you have an active internet connection.',
+                classes: 'rounded'
+            });
+            $('#submitButton').html('SEND MESSAGE');
+        });         
     }
 
     window.addEventListener('offline', function(event){
@@ -153,4 +149,3 @@ $(document).ready(function(){
         });
     });
 });
-
