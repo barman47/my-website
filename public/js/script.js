@@ -18,28 +18,39 @@ $(document).ready(function(){
     form.addEventListener('submit', submitForm, false);
 
     function submitForm () {
-        for (var i = 0; i < inputs.length; i++) {
-            if (isEmpty(inputs[i])) {
+        var counter = 0;
+        while (counter < 1) {
+            for (var i = 0; i < inputs.length; i++) {
+                if (isEmpty(inputs[i])) {
+                    M.toast({
+                        html: 'Please provide message details to send.',
+                        classes: 'rounded'
+                    });
+                    inputs[i].focus();
+                    counter = 1;
+                    break;
+                }  
+            }
+            
+            if (checkBoxes[0].checked === false && checkBoxes[1].checked === false && checkBoxes[2].checked === false) {
                 M.toast({
-                    html: 'Please provide message details to send.',
+                    html: 'Please select at least one service you require.',
                     classes: 'rounded'
                 });
-                inputs[i].focus();
+                counter = 1;
                 break;
-            }  
-        }
+            } else {
+                if (counter === 1) {
+                    break;
+                } else {
+                    sendEmail();
+                    counter ++;
+                }
+                
+            }
 
-        if (checkBoxes[0].checked === false && checkBoxes[1].checked === false && checkBoxes[2].checked === false) {
-            M.toast({
-                html: 'Please select at least one service you require.',
-                classes: 'rounded'
-            });
-    
-        } else {
-            sendEmail();
-        } 
+        }
     }
-    
 
     $('.sidenav').sidenav();
     $('.materialboxed').materialbox();
@@ -82,15 +93,30 @@ $(document).ready(function(){
     }
 
     function sendEmail () {
-        $('button').html('SENDING MESSAGE...');
+        $('#submitButton').html('SENDING MESSAGE . . .');
         let data = {
             email: $('#email').val(),
             message: $('#message').val(),
             date: $('#date').val(),
-            webDevelopment: $('#web').val(),
-            desktopApp: $('#desktopApp').val(),
-            sayHi: $('#sayHi').val(),
         };
+
+        if (checkBoxes[0].checked === false) {
+            checkBoxes[0].value = ''
+        } else {
+            data.webDevelopment = $('#web').val();
+        } 
+
+        if (checkBoxes[1].checked === false) {
+            checkBoxes[1].value = '';
+        } else {
+            data.desktopApp = $('#desktopApp').val();
+        } 
+
+        if (checkBoxes[2].checked === false) {
+            checkBoxes[2].value === '';
+        } else {    
+            data.sayHi = $('#sayHi').val();
+        }
 
         const url = '/email';
         setTimeout(function () {
@@ -102,21 +128,16 @@ $(document).ready(function(){
                     html: 'Message Sent Successfully. Dominic will get back to you shortly.',
                     classes: 'rounded',
                 });
+                $('#submitButton').html('SEND MESSAGE');
                 form.reset();
-                // $('#email').val('');
-                // $('#message').val('');
-                // $('#date').val('');
-                // $('#web').prop('checked', false);
-                // $('#desktopApp').prop('checked', false);
-                // $('#sayHi').prop('checked', false);
-                // $('button').html('SEND MESSAGE');
             }).fail(function (jqXHR, status) {
                 M.toast({
-                    html: 'Message not Sent. Please make sure you have an active connection.',
+                    html: 'Message not Sent. Please make sure you have an active internet connection.',
                     classes: 'rounded'
                 });
-                $('button').html('SEND MESSAGE');
+                $('#submitButton').html('SEND MESSAGE');
             });
+            
         }, 1000);
     }
 
@@ -132,3 +153,4 @@ $(document).ready(function(){
         });
     });
 });
+

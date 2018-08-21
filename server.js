@@ -34,7 +34,7 @@ app.post('/email', (req, res) => {
     <ul>
         <li>Email: ${req.body.email}</li>
         <li>Date Required: ${req.body.date}</li>
-        <li>Services: ${req.body.webDevelopment}, ${req.body.desktopApp}, ${req.body.teaching}</li>
+        <li>Services: ${req.body.webDevelopment}, ${req.body.desktopApp}, ${req.body.sayHi}</li>
     </ul>
     <h3>Message</h3>
     <p>${req.body.message}</p>
@@ -69,6 +69,7 @@ app.post('/email', (req, res) => {
             return;
         } else {
             console.log('Email sent: ' + info.response);
+            console.log(req.body);
             res.status(200).end();
         }
     });
@@ -82,7 +83,13 @@ app.get('*', function(req, res){
     res.status(404).render('404', {
         title: 'Error 404'
     });
-  });
+});
+
+// app.get((req, res) => {
+//     res.status(404).render('404', {
+//         title: 'Error 404'
+//     });
+// });
 
 app.listen(PORT, () => {
     console.log(`Server is up on port ${PORT}...`);
