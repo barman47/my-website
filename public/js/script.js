@@ -10,7 +10,7 @@ $(document).ready(function(){
     $('.scrollspy').scrollSpy();
 
     var form = document.form;
-    var button = document.querySelector('button');
+    var button = document.querySelector('#submitButton');
     
     var inputs = [
         form.email,
