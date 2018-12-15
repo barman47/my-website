@@ -1,27 +1,23 @@
-$(document).ready(function(){
     $('.sidenav').sidenav();
     $('.materialboxed').materialbox();
-    $('.parallax').parallax();
     $('.tabs').tabs();
     $('.datepicker').datepicker({
         disableWeekends: true
     });
     $('.tooltipped').tooltip();
     $('.scrollspy').scrollSpy();
-
+    $('.pushpin').pushpin({
+        top: $('.pushpin').offset().top,            
+    });
+    $('.materialboxed').materialbox();
+    
     var form = document.form;
     var button = document.querySelector('#submitButton');
     
     var inputs = [
+        form.name,
         form.email,
-        form.message,
-        form.date
-    ];
-    
-    var checkBoxes = [
-        form.web,
-        form.desktopApp,
-        form.sayHi
+        form.message
     ];
 
     button.addEventListener('click', submitForm, false);
@@ -40,22 +36,6 @@ $(document).ready(function(){
                     counter = 1;
                     break;
                 }  
-            }
-            
-            if (checkBoxes[0].checked === false && checkBoxes[1].checked === false && checkBoxes[2].checked === false) {
-                M.toast({
-                    html: 'Please select at least one service you require.',
-                    classes: 'rounded'
-                });
-                counter = 1;
-                break;
-            } else {
-                if (counter === 1) {
-                    break;
-                } else {
-                    sendEmail();
-                    counter ++;
-                }   
             }
         }
     }
@@ -93,28 +73,10 @@ $(document).ready(function(){
     function sendEmail () {
         $('#submitButton').html('SENDING MESSAGE . . .');
         let data = {
+            name: $('#name').val(),
             email: $('#email').val(),
-            message: $('#message').val(),
-            date: $('#date').val(),
+            message: $('#message').val()
         };
-
-        if (checkBoxes[0].checked === false) {
-            checkBoxes[0].value = ''
-        } else {
-            data.webDevelopment = $('#web').val();
-        } 
-
-        if (checkBoxes[1].checked === false) {
-            checkBoxes[1].value = '';
-        } else {
-            data.desktopApp = $('#desktopApp').val();
-        } 
-
-        if (checkBoxes[2].checked === false) {
-            checkBoxes[2].value === '';
-        } else {    
-            data.sayHi = $('#sayHi').val();
-        }
 
         const url = '/email';
         
@@ -148,4 +110,70 @@ $(document).ready(function(){
             html: 'You are back online'
         });
     });
-});
+    
+    class TypeWriter {
+        constructor (txtElement, words, wait = 3000) {
+            this.txtElement = txtElement;
+            this.words = words;
+            this.txt = '';
+            this.wordIndex = 0;
+            this.wait = parseInt(wait, 10);
+            this.type();
+            this.IsDeleting = false;
+        }
+    
+        type () {
+            // Current Index of word
+            const current = this.wordIndex % this.words.length;
+            // Get full text of current words
+            const fullTxt = this.words[current];
+    
+            // Check if thisIsDeleting
+            if (this.isDeleting) {
+                // Remove char
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                // Add char
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+    
+            // Insert txt into txtElement
+            this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+    
+            let cursor = document.querySelector('.txt');
+    
+            // Initial Type Speed
+            let typeSpeed = 100;
+    
+            if (this.isDeleting) {
+                typeSpeed /= 4;
+            }
+    
+            // If word is complete
+            if (!this.isDeleting && this.txt === fullTxt) {
+                // Make pause at end
+                typeSpeed = 4000;
+                // Set delete to true
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                // Move to the next words
+                this.wordIndex ++;
+                // Pause before start typing
+                cursor.style.borderRight = 'none';
+                typeSpeed = 3000;
+            }
+            setTimeout(() => this.type(), typeSpeed);
+        }
+    }
+    
+    // Init App
+    function init () {
+        const txtElement = document.querySelector('.txt-type');
+        const words = JSON.parse(txtElement.getAttribute('data-words'));
+        const wait = txtElement.getAttribute('data-wait');
+        // Init TypeWriter
+        new TypeWriter(txtElement, words, wait);
+    }
+
+    init();

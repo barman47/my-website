@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const exphbs = require('express-handlebars');
+const favicon = require('express-favicon');
 const path = require('path');
 
 const PORT  = process.env.PORT || 3000;
@@ -10,31 +11,33 @@ const publicPath = path.join(__dirname, 'public')
 
 app.use(express.static(publicPath));
 
+app.use(favicon(path.join(publicPath, 'img', 'favicon.png')));
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
-    extname: '.hbs'
+    extname: '.hbs',
+    partialsDir: 'views/partials'
 }));
+
 app.set('view engine', '.hbs');
 
 app.get('/', (req, res) => {
     res.render('home', {
         title: 'Uzoanya Dominic',
-        style: 'css/style.css'
+        style: 'css/style.css',
+        year: new Date().getFullYear()
     });
 });
 
 app.post('/email', (req, res) => {
     const message = `
     <p>You Have a new Contact Request</p>
-    <h3>Message Details</h3>
-    <ul>
-        <li>Email: ${req.body.email}</li>
-        <li>Date Required: ${req.body.date}</li>
-        <li>Services: ${req.body.webDevelopment}, ${req.body.desktopApp}, ${req.body.sayHi}</li>
-    </ul>
+    <p>From: <strong>${req.body.name}</strong></p>
+    <p>Sender: <strong>${req.body.email}</strong></p>
+    <br>
     <h3>Message</h3>
     <p>${req.body.message}</p>
     `;
