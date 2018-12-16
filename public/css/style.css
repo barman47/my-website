@@ -289,8 +289,9 @@ div.hexagon {
 	background-size: 300px 300px;
 	background-repeat: no-repeat;
 	margin: 0 auto;
-	width: 300px;
-	height: 300px;
+	width: 250px;
+	height: 280px;
+	transform: rotate(30deg);
 }
 
 #contact {
@@ -412,7 +413,7 @@ footer {
 }
 
 .footer-copyright {
-	background-color: #252934;
+	background-color: #363b49 !important;
 	opacity: 0.8;
 }
 
