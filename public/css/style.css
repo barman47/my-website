@@ -7,7 +7,6 @@ html, body {
 
 #background-cover {
 	background-color: rgba(0, 0, 0);
-	/* background-color: #2193b0; */
 	opacity: 0.1;
 	position: absolute;
 	top: 0;
@@ -136,8 +135,9 @@ nav ul a:hover {
 
 .subheader {
 	color: #555;
-	text-transform: capitalize;
 	font-weight: 700;
+	text-align: center;
+	text-transform: capitalize;
 }
 
 .section {
@@ -282,6 +282,17 @@ nav ul a:hover {
 	color: #fff;
 }
 
+div.hexagon {
+	clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+	background-image: url(/img/me.jpg);
+	background-position: center;
+	background-size: 300px 300px;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	width: 300px;
+	height: 300px;
+}
+
 #contact {
 	position: relative;
 }
@@ -328,7 +339,7 @@ nav ul a:hover {
 }
 
 .underline {
-	border-bottom: 0.25rem solid #2193b0;
+	border-bottom: 4px solid #2193b0;
 	padding-bottom: 1rem;
 }
 
@@ -423,25 +434,6 @@ footer {
 	margin-right: 1rem;
 }
 
-/* @media screen and (max-width: 670px) {
-	header {
-  		min-height: 500px;
-	}
-
-	#greetingText {
-  		max-width: 50%; 
-	}
-
-	#headerDiv {
-		margin-top: 100px;
-	}
-
-	#footer .container .right {
-		text-align: center;
-	}
- 
-} */
-
 @media (max-width: 768px) {
 	canvas {
 		height: 100vh !important;
@@ -456,6 +448,10 @@ footer {
 		max-width: 100% !important;
 	}
 
+	.pinned {
+		position: fixed !important;
+	}
+
 	.parallax {
 		display: none;
 	}
@@ -464,19 +460,14 @@ footer {
 		margin-top: 0.5rem;
 		border: 0.0635rem solid #f1f1f1;
 		box-shadow: 0px 0px 0.125rem #cccccc;
-		/* background-color: #f5f5f5; */
 	}
-
-	/* .card.medium {
-		height: 350px;
-	} */
 
 	.card-image {
 		padding-top: 0;
 	}
 
 	.underline {
-		border-bottom: 0.125rem solid #2193b0;
+		border-bottom: 2px solid #2193b0;
 	}
 
 	.page-footer .footer-copyright {

@@ -1,10 +1,6 @@
+document.addEventListener('DOMContentLoaded', function() {
     $('.sidenav').sidenav();
     $('.materialboxed').materialbox();
-    $('.tabs').tabs();
-    $('.datepicker').datepicker({
-        disableWeekends: true
-    });
-    $('.tooltipped').tooltip();
     $('.scrollspy').scrollSpy();
     $('.pushpin').pushpin({
         top: $('.pushpin').offset().top,            
@@ -15,28 +11,41 @@
     var button = document.querySelector('#submitButton');
     
     var inputs = [
-        form.name,
+        form.username,
         form.email,
         form.message
     ];
+
+    var sidelinks = document.querySelectorAll('.sidelinks');
+
+    sidelinks.forEach(function (sidelink) {
+        sidelink.addEventListener('click', function () {
+            setTimeout(function () {
+                $('.sidenav').sidenav('close');
+            }, 1000);
+        });
+    });
 
     button.addEventListener('click', submitForm, false);
     form.addEventListener('submit', submitForm, false);
 
     function submitForm () {
-        var counter = 0;
-        while (counter < 1) {
-            for (var i = 0; i < inputs.length; i++) {
-                if (isEmpty(inputs[i])) {
-                    M.toast({
-                        html: 'Please provide message details to send.',
-                        classes: 'rounded'
-                    });
-                    inputs[i].focus();
-                    counter = 1;
-                    break;
-                }  
+        var isOkay = false;
+        for (var i = 0; i < inputs.length; i++) {
+            if (isEmpty(inputs[i])) {
+                M.toast({
+                    html: 'Please provide message details to send.',
+                    classes: 'rounded'
+                });
+                inputs[i].focus();
+                break;
+            } else {
+                isOkay = true
             }
+        }
+
+        if (isOkay === true){
+            sendEmail();
         }
     }
 
@@ -73,7 +82,7 @@
     function sendEmail () {
         $('#submitButton').html('SENDING MESSAGE . . .');
         let data = {
-            name: $('#name').val(),
+            name: $('#username').val(),
             email: $('#email').val(),
             message: $('#message').val()
         };
@@ -86,7 +95,7 @@
         }).done (function () {
             M.toast({
                 html: 'Message Sent Successfully. Dominic will get back to you shortly.',
-                classes: 'rounded',
+                classes: 'rounded'
             });
             $('#submitButton').html('SEND MESSAGE');
             form.reset();
@@ -177,3 +186,4 @@
     }
 
     init();
+});

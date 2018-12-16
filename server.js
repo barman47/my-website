@@ -33,8 +33,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/email', (req, res) => {
+    console.log(req.body);
     const message = `
-    <p>You Have a new Contact Request</p>
+    <h3>YOU HAVE A NEW CONTACT REQUEST</h3>
     <p>From: <strong>${req.body.name}</strong></p>
     <p>Sender: <strong>${req.body.email}</strong></p>
     <br>
@@ -46,7 +47,7 @@ app.post('/email', (req, res) => {
         service: 'gmail',
         auth: {
           user: 'uzoanyadominic@gmail.com',
-          pass: 'vicecity',
+          pass: 'VICEcity@47',
         },
         tls: {
             rejectUnauthorized: false
