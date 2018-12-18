@@ -286,11 +286,11 @@ div.hexagon {
 	clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 	background-image: url(/img/me.jpg);
 	background-position: center;
-	background-size: 300px 300px;
+	background-size: 18.75rem 18.75rem; /* 300px 300px; */
 	background-repeat: no-repeat;
 	margin: 0 auto;
-	width: 250px;
-	height: 280px;
+	width: 15.625rem; /* 250px; */
+	height: 17.5rem; /* 280px; */
 	transform: rotate(30deg);
 }
 
@@ -338,6 +338,10 @@ div.hexagon {
 .card-action a:visited {
 	color: #333 !important;
 }
+
+/* div#projects-target.row.scrollspy::after {
+	margin: 0 !important;
+} */
 
 .underline {
 	border-bottom: 4px solid #2193b0;

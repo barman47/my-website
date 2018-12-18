@@ -27,7 +27,6 @@ app.set('view engine', '.hbs');
 app.get('/', (req, res) => {
     res.render('home', {
         title: 'Uzoanya Dominic',
-        style: 'css/style.css',
         year: new Date().getFullYear()
     });
 });
