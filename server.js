@@ -16,13 +16,13 @@ app.use(favicon(path.join(publicPath, 'img', 'favicon.png')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.use(function(req, res, next) {
-    if (req.secure) {
-        next();
-    } else {
-        res.redirect('https://' + req.headers.host + req.url);
-    }
-});
+// app.use(function(req, res, next) {
+//     if (req.secure) {
+//         next();
+//     } else {
+//         res.redirect('https://' + req.headers.host + req.url);
+//     }
+// });
 
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
