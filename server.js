@@ -1,4 +1,5 @@
 const express = require('express');
+const https = require('https');
 const app = express();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -90,6 +91,6 @@ app.get('*', function(req, res){
     });
 });
 
-app.listen(PORT, () => {
+https.createServer(app).listen(PORT, () => {
     console.log(`Server is up on port ${PORT}...`);
 });
