@@ -1,5 +1,4 @@
 const express = require('express');
-const https = require('https');
 const app = express();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -17,13 +16,13 @@ app.use(favicon(path.join(publicPath, 'img', 'favicon.png')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.use(function(req, res, next) {
-    if (req.secure) {
-        next();
-    } else {
-        res.redirect('https://' + req.headers.host + req.url);
-    }
-});
+// app.use(function(req, res, next) {
+//     if (req.secure) {
+//         next();
+//     } else {
+//         res.redirect('https://' + req.headers.host + req.url);
+//     }
+// });
 
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
@@ -91,6 +90,6 @@ app.get('*', function(req, res){
     });
 });
 
-https.createServer(app).listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server is up on port ${PORT}...`);
 });
