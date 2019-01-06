@@ -51,14 +51,23 @@ app.post('/email', (req, res) => {
     `;
 
     var transporter = nodemailer.createTransport({
-        host: 'mail.privateemail.com',
-        port: 587,
-        secure: false,
+        host: process.env.EMAIL_HOST,
+        port: 465,
+        secure: true,
         auth: {
-          user: 'contact@domstech.com',
-          pass: 'VICEcity@47',
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASSWORD,
         }
-      });
+    });
+    // var transporter = nodemailer.createTransport({
+    //     host: 'mail.privateemail.com',
+    //     port: 587,
+    //     secure: false,
+    //     auth: {
+    //       user: 'contact@domstech.com',
+    //       pass: 'VICEcity@47',
+    //     }
+    // });
     // var transporter = nodemailer.createTransport({
     //     service: 'gmail',
     //     auth: {
