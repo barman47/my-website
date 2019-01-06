@@ -51,15 +51,24 @@ app.post('/email', (req, res) => {
     `;
 
     var transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'mail.privateemail.com',
+        port: 587,
+        secure: false,
         auth: {
-          user: 'uzoanyadominic@gmail.com',
+          user: 'contact@domstech.com',
           pass: 'VICEcity@47',
-        },
-        tls: {
-            rejectUnauthorized: false
         }
       });
+    // var transporter = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     auth: {
+    //       user: 'uzoanyadominic@gmail.com',
+    //       pass: 'VICEcity@47',
+    //     },
+    //     tls: {
+    //         rejectUnauthorized: false
+    //     }
+    //   });
 
        // setup email data with unicode symbols
     let mailOptions = {
