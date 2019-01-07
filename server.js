@@ -1,4 +1,5 @@
 const express = require('express');
+const secure = require('express-force-https');
 const app = express();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -10,6 +11,7 @@ const PORT  = process.env.PORT || 3000;
 const publicPath = path.join(__dirname, 'public')
 
 app.use(express.static(publicPath));
+app.use(secure);
 
 app.use(favicon(path.join(publicPath, 'img', 'favicon.png')));
 
