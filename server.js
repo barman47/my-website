@@ -53,7 +53,7 @@ app.post('/email', (req, res) => {
     var transporter = nodemailer.createTransport({
         host: 'mail.privateemail.com',
         port: 587,
-        secure: true,
+        secure: false,
         auth: {
           user: 'contact@domstech.com',
           pass: 'VICEcity@47',
