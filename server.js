@@ -16,13 +16,6 @@ app.use(favicon(path.join(publicPath, 'img', 'favicon.png')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.use(function(req, res, next) {
-    if (req.protocol === 'http') {
-        res.redirect('https://' + req.headers.host + req.url);
-    }
-    next();
-});
-
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
     extname: '.hbs',
@@ -111,16 +104,29 @@ app.post('/email', (req, res) => {
     });
 });
 
-app.get((req, res) => {
+var http = express.createServer();
+
+// set up a route to redirect http to https
+http.get('*', function(req, res) {  
+    res.redirect('https://' + req.headers.host + req.url);
+
+    // Or, if you don't want to automatically detect the domain name from the request header, you can hard code it:
+    // res.redirect('https://example.com' + req.url);
+})
+
+http.get((req, res) => {
     res.status(404).send('Page Not Found');
 });
 
-app.get('*', function(req, res){
+http.get('*', function(req, res){
     res.status(404).render('404', {
         title: 'Error 404'
     });
 });
 
-app.listen(PORT, () => {
+http.listen(PORT, () => {
     console.log(`Server is up on port ${PORT}...`);
 });
+// app.listen(PORT, () => {
+//     console.log(`Server is up on port ${PORT}...`);
+// });
