@@ -17,11 +17,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
-    if (req.secure) {
-        next();
-    } else {
+    if (req.protocol === 'http') {
         res.redirect('https://' + req.headers.host + req.url);
     }
+    next();
 });
 
 app.engine('.hbs', exphbs({
