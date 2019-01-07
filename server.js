@@ -50,19 +50,40 @@ app.post('/email', (req, res) => {
     <p>${req.body.message}</p>
     `;
 
-    var transporter = nodemailer.createTransport({
-        host: 'mail.privateemail.com',
-        port: 587,
-        secure: false,
+    // var transporter = nodemailer.createTransport({
+    //     host: 'mail.privateemail.com',
+    //     port: 587,
+    //     secure: false,
+    //     auth: {
+    //       user: 'contact@domstech.com',
+    //       pass: 'VICEcity@47',
+    //     }
+    // });
+
+    
+    const transporter = nodemailer.createTransport({
+        // service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 465,
         auth: {
-          user: 'contact@domstech.com',
-          pass: 'VICEcity@47',
+            user: 'uzoanyadominic@gmail.com',
+            pass: 'VICEcity@47',
         },
         tls: {
             rejectUnauthorized: false
         }
     });
-
+    // var transporter = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     auth: {
+    //         user: 'uzoanyadominic@gmail.com',
+    //         pass: 'VICEcity@47',
+    //     },
+    //     tls: {
+    //         rejectUnauthorized: false
+    //     }
+    // });
+    
     transporter.verify(function(error, success) {
         if (error) {
              console.log(error);
@@ -70,18 +91,6 @@ app.post('/email', (req, res) => {
              console.log('Server is ready to take our messages');
         }
     });
-
-    // var transporter = nodemailer.createTransport({
-    //     service: 'gmail',
-    //     auth: {
-    //       user: 'uzoanyadominic@gmail.com',
-    //       pass: 'VICEcity@47',
-    //     },
-    //     tls: {
-    //         rejectUnauthorized: false
-    //     }
-    //   });
-
        // setup email data with unicode symbols
     let mailOptions = {
         from: `New Client`, // sender address
