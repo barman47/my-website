@@ -52,7 +52,7 @@ app.post('/email', (req, res) => {
 
     var transporter = nodemailer.createTransport({
         host: 'mail.privateemail.com',
-        port: 465,
+        port: 587,
         secure: true,
         auth: {
           user: 'contact@domstech.com',
@@ -69,7 +69,7 @@ app.post('/email', (req, res) => {
         } else {
              console.log('Server is ready to take our messages');
         }
-     });
+    });
 
     // var transporter = nodemailer.createTransport({
     //     service: 'gmail',
