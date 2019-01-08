@@ -31,8 +31,6 @@
     "express-messages": "^1.0.1",
     "express-validator": "^5.3.0",
     "flash": "^1.1.0",
-    "mongoose": "^5.2.8",
-    "nodemailer": "^4.7.0",
-    "nodemailer-sendgrid-transport": "^0.2.0"
+    "mongoose": "^5.2.8"
   }
 }

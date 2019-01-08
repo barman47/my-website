@@ -29,8 +29,6 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 app.get('/', (req, res) => {
-    console.log('req.headers.host ' + req.headers.host + req.url);
-    console.log('req.url ' + req.url);
     res.render('home', {
         title: 'Uzoanya Dominic',
         year: new Date().getFullYear()
@@ -38,26 +36,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/email', (req, res) => {
-    console.log(req.body);
-    const message = `
-    <h3>YOU HAVE A NEW CONTACT REQUEST</h3>
-    <p>From: <strong>${req.body.name}</strong></p>
-    <p>Sender: <strong>${req.body.email}</strong></p>
-    <br>
-    <h3>Message</h3>
-    <p>${req.body.message}</p>
-    `;
-
-    // var transporter = nodemailer.createTransport({
-    //     host: 'mail.privateemail.com',
-    //     port: 587,
-    //     secure: false,
-    //     auth: {
-    //       user: 'contact@domstech.com',
-    //       pass: 'VICEcity@47',
-    //     }
-    // });
-
     const messageContent = `
     <h3>Hello Dominic I need your Services</h3>
     <p>From: <strong>${req.body.name}</strong></p>
@@ -67,20 +45,13 @@ app.post('/email', (req, res) => {
     <p>${req.body.message}</p>
     `;
 
-    sgMail.setApiKey('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');
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-    // const msg = {
-    //     from: `New Client`, // sender address
-    //     to: 'nomsouzoanya@yahoo.co.uk', // list of receivers
-    //     subject: 'Hello Dominic I Need Your Services', // Subject line
-    //     html: message // html body
-    //   };
+
 
     const msg = {
         to: 'nomsouzoanya@yahoo.co.uk',
         from: req.body.email,
         subject: 'New Contact Request',
-        // text: messageContent
         html: messageContent
       };
 
