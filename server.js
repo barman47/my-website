@@ -2,12 +2,10 @@ const express = require('express');
 const secure = require('express-force-https');
 const app = express();
 const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
+const sgMail = require('@sendgrid/mail');
 const exphbs = require('express-handlebars');
 const favicon = require('express-favicon');
 const path = require('path');
-
-const sgMail = require('@sendgrid/mail');
 
 const PORT  = process.env.PORT || 3000;
 const publicPath = path.join(__dirname, 'public')
