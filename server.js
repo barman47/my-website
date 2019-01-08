@@ -43,22 +43,20 @@ app.post('/email', (req, res) => {
     <p>${req.body.message}</p>
     `;
 
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-
     const msg = {
         to: 'nomsouzoanya@yahoo.co.uk',
         from: req.body.email,
         subject: 'New Contact Request',
         html: messageContent
-      };
-
-      sgMail.send(msg).then(() => {
-          console.log('Message Sent Successfully');
-          res.status(200).end()
-      }).catch((err) => {
-            return console.log(err);
-      });
+    };
+    
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    sgMail.send(msg).then(() => {
+        console.log('Message Sent Successfully');
+        res.status(200).end()
+    }).catch((err) => {
+        return console.log(err);
+    });
 });
 
 app.get((req, res) => {

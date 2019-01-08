@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
             form.reset();
         }).fail(function (jqXHR, status) {
             M.toast({
-                html: 'Message not Sent. Please make sure you have an active internet connection.',
+                html: 'Message not Sent. Try Again.',
                 classes: 'rounded'
             });
             $('#submitButton').html('SEND MESSAGE');
