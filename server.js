@@ -59,7 +59,7 @@ app.post('/email', (req, res) => {
     // });
 
     const messageContent = `
-    <h3>YOU HAVE A NEW CONTACT REQUEST</h3>
+    <h3>Hello Dominic I need your Services</h3>
     <p>From: <strong>${req.body.name}</strong></p>
     <p>Sender: <strong>${req.body.email}</strong></p>
     <br>
@@ -79,9 +79,9 @@ app.post('/email', (req, res) => {
     const msg = {
         to: 'nomsouzoanya@yahoo.co.uk',
         from: req.body.email,
-        subject: 'Hello Dominic I Need Your Services',
-        text: messageContent
-        // html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+        subject: 'New Contact Request',
+        // text: messageContent
+        html: messageContent
       };
 
       sgMail.send(msg).then(() => {
@@ -90,42 +90,6 @@ app.post('/email', (req, res) => {
       }).catch((err) => {
             return console.log(err);
       });
-
-    // var transporter = nodemailer.createTransport({
-    //     service: 'gmail',
-    //     auth: {
-    //         user: 'uzoanyadominic@gmail.com',
-    //         pass: 'VICEcity@47',
-    //     },
-    //     tls: {
-    //         rejectUnauthorized: false
-    //     }
-    // });
-    
-    // transporter.verify(function(error, success) {
-    //     if (error) {
-    //          console.log(error);
-    //     } else {
-    //          console.log('Server is ready to take our messages');
-    //     }
-    // });
-    //    // setup email data with unicode symbols
-    // let mailOptions = {
-    //     from: `New Client`, // sender address
-    //     to: 'nomsouzoanya@yahoo.co.uk', // list of receivers
-    //     subject: 'Hello Dominic I Need Your Services', // Subject line
-    //     html: message // html body
-    // };
-      
-
-    // transporter.sendMail(mailOptions, function(error, info){
-    //     if (error) {
-    //         return console.log(error);
-    //     } else {
-    //         console.log('Email sent: ' + info.response);
-    //         res.status(200).end();
-    //     }
-    // });
 });
 
 app.get((req, res) => {
