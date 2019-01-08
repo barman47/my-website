@@ -53,7 +53,7 @@ app.post('/email', (req, res) => {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     sgMail.send(msg).then(() => {
         console.log('Message Sent Successfully');
-        res.status(200).end()
+        return res.status(200).end()
     }).catch((err) => {
         return console.log(err);
     });
