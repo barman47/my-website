@@ -8,7 +8,7 @@ const favicon = require('express-favicon');
 const path = require('path');
 
 const PORT  = process.env.PORT || 3000;
-const publicPath = path.join(__dirname, 'public')
+const publicPath = path.join(__dirname, 'public');
 
 app.use(express.static(publicPath));
 app.use(secure);
@@ -49,7 +49,7 @@ app.post('/email', (req, res) => {
         subject: 'New Contact Request',
         html: messageContent
     };
-    
+
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     sgMail.send(msg).then(() => {
         console.log('Message Sent Successfully');
