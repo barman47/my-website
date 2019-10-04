@@ -225,19 +225,31 @@ nav ul a:hover {
 }
 
 .node, .mongodb {
-	width: 75%;
+	width: 80%;
 }
 
 .mysql, .sqlite {
 	width: 70%;
 }
 
-.react, .java, .ui{
-	width: 65%;
+.java {
+	width: 75%;
+}
+
+.react {
+	width: 80%;
 }
 
 .firebase {
-	width: 60%;
+	width: 70%;
+}
+
+.react-native {
+	width: 55%;
+}
+
+.ui {
+	width: 70%;
 }
 
 .skill-percentage .skill-language {
@@ -333,20 +345,27 @@ div.hexagon {
 	padding-top: 3rem;
 }
 
-.card-action a {
+.card .card-content h6 {
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.card .card-action a {
 	color: #333 !important;
 }
 
-.card-action a:active {
+.card .card-action a:active {
 	color: #ffa500 !important;
 }
 
-.card-action a:hover {
+.card .card-action a:hover {
 	color: #2193b0 !important;
+	text-decoration: underline;
 }
 
-.card-action a:visited {
-	color: #333 !important;
+.card .card-action a:visited {
+	color: #333;
 }
 
 /* div#projects-target.row.scrollspy::after {
